@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @einwohner.name %>
+</p>
+
+<p>
+  <strong>Alter:</strong>
+  <%= @einwohner.alter %>
+</p>
+
+<p>
+  <strong>Stadt:</strong>
+  <%= @einwohner.stadt.name %>
+</p>
+
+<%= link_to 'Edit', edit_einwohner_path(@einwohner) %> |
+<%= link_to 'Back', einwohners_path %>

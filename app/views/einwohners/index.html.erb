@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Einwohners</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Alter</th>
+      <th>Stadt</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @einwohners.each do |einwohner| %>
+      <tr>
+        <td><%= einwohner.name %></td>
+        <td><%= einwohner.alter %></td>
+        <td><%= einwohner.stadt.name %></td>
+        <td><%= link_to 'Show', einwohner %></td>
+        <td><%= link_to 'Edit', edit_einwohner_path(einwohner) %></td>
+        <td><%= link_to 'Destroy', einwohner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Einwohner', new_einwohner_path %>
+<%= link_to 'Stadt', stadts_path %>

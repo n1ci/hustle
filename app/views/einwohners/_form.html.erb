@@ -1,0 +1,31 @@
+<%= form_with(model: einwohner, local: true) do |form| %>
+  <% if einwohner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(einwohner.errors.count, "error") %> prohibited this einwohner from being saved:</h2>
+
+      <ul>
+      <% einwohner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :alter %>
+    <%= form.number_field :alter %>
+  </div>
+
+  <div class="field">
+    <%= form.collection_select :stadt_id, @stadts, :id, :stadt_name, {}, {class: "form-control"} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
